@@ -1,16 +1,21 @@
 import React from "react";
 import { FaBook, FaAward, FaRegClock } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const LearningHub = () => {
+  const navigate = useNavigate(); // Initialize navigate function
+
   return (
     <div className="bg-transperent min-h-screen p-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-white mb-8">Learning Hub</h1>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[{
+          {[
+            {
               title: "Blockchain Fundamentals",
-              description: "Learn the basics of blockchain technology and its environmental applications",
+              description:
+                "Learn the basics of blockchain technology and its environmental applications",
               duration: "2 hours",
               level: "Beginner",
             },
@@ -22,7 +27,8 @@ const LearningHub = () => {
             },
             {
               title: "Sustainable Practices",
-              description: "Discover practical ways to contribute to environmental conservation",
+              description:
+                "Discover practical ways to contribute to environmental conservation",
               duration: "2.5 hours",
               level: "Beginner",
             },
@@ -49,7 +55,10 @@ const LearningHub = () => {
                     {course.level}
                   </div>
                 </div>
-                <button className="w-full py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors">
+                <button
+                  className="w-full py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                  onClick={() => navigate("/course")} // Navigate to /course on click
+                >
                   Start Learning
                 </button>
               </div>

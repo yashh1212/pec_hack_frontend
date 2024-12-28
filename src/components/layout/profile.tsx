@@ -1,7 +1,10 @@
 import React from "react";
 import { useAuth0 } from "@auth0/auth0-react"; // Import Auth0 hook
 
-const Profile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const Profile: React.FC<{ onClose: () => void; userId: string | null }> = ({
+  onClose,
+  userId,
+}) => {
   const { user } = useAuth0(); // Access user object from Auth0
 
   if (!user) {
@@ -24,6 +27,11 @@ const Profile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
           <p>
             <strong>Nickname:</strong> {user.nickname}
           </p>
+          {userId && (
+            <p>
+              <strong>Wallet ID:</strong> {userId}
+            </p>
+          )}
           <p>
             <strong>Picture:</strong>
           </p>
@@ -32,6 +40,7 @@ const Profile: React.FC<{ onClose: () => void }> = ({ onClose }) => {
             alt="Profile"
             className="w-24 h-24 rounded-full"
           />
+          {/* Display User ID */}
         </div>
 
         {/* Close Button */}

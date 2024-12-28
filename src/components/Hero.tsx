@@ -1,5 +1,6 @@
 import React from "react";
 import { FaLeaf, FaWallet } from "react-icons/fa";
+import { useAuth0 } from "@auth0/auth0-react"; // Import useAuth0 hook
 import { useParallax } from "../hooks/useParallax";
 import { useIntersectionObserver } from "../hooks/useIntersectionObserver";
 import AnimatedCounter from "./ui/AnimatedCounter";
@@ -8,6 +9,21 @@ import ParticleBackground from "./ui/ParticleBackground"; // Import ParticleBack
 const Hero = () => {
   const parallaxOffset = useParallax(0.5);
   const { ref, isVisible } = useIntersectionObserver();
+  const { loginWithPopup, logout, user, isAuthenticated, isLoading } =
+    useAuth0(); // Auth0 hooks
+
+  const handleConnectWallet = async () => {
+    if (!isAuthenticated) {
+      try {
+        await loginWithPopup(); // Open Auth0 login in a popup window
+      } catch (err) {
+        console.error("Login failed", err);
+      }
+    } else {
+      // Proceed with the wallet connection logic if already logged in
+      console.log("Proceed to connect wallet...");
+    }
+  };
 
   return (
     <div className="relative min-h-screen bg-transperent text-white overflow-hidden">
@@ -46,7 +62,10 @@ const Hero = () => {
               </span>
             </button>
 
-            <button className="group px-8 py-3 bg-gray-800 text-white rounded-full border-2 border-green-500 hover:bg-gray-700 transition-all hover:scale-105 hover:shadow-lg">
+            <button
+              className="group px-8 py-3 bg-gray-800 text-white rounded-full border-2 border-green-500 hover:bg-gray-700 transition-all hover:scale-105 hover:shadow-lg"
+              onClick={handleConnectWallet} // Trigger login or wallet connection
+            >
               <span className="flex items-center gap-2">
                 <FaWallet className="w-5 h-5 group-hover:rotate-12 transition-transform" />{" "}
                 Connect Wallet
