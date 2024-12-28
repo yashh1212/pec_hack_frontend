@@ -6,15 +6,14 @@ import Dashboard from './components/Dashboard';
 import LearningHub from './components/LearningHub';
 import Community from './components/Community';
 import Navigation from "./components/layout/Navigation";
-import background from "C://Users//asus//OneDrive//Pictures//Screenshots//Screenshot 2024-12-28 102433.png"; // Import background image
-
+import background from "../images/a5afc9_47eb0f65530641ac9d02588eea0c8e69~mv2.avif"; 
 function App() {
   return (
     <div
       className="min-h-screen bg-gray-50"
       style={{
         backgroundImage: `url(${background})`,
-         backgroundAttachment: "fixed",
+        
          
       }}
     >
