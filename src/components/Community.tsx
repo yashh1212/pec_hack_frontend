@@ -82,7 +82,7 @@ const Community = () => {
     },
   ];
   return (
-    <div className="bg-transperent min-h-screen p-0">
+    <div id="community" className="bg-transperent min-h-screen p-0">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-4xl font-bold text-white text-center mb-8">
           Communities

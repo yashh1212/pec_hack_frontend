@@ -45,7 +45,8 @@ const LoginButton = () => {
       const data = await response.json();
       console.log("User data stored successfully:", data.userId);
       setUserId(data.userId); 
-      sessionStorage.setItem(data.userId,"user_id")
+      sessionStorage.setItem("user_id",data.userId)
+      sessionStorage.setItem("user_name", data.name);
     } catch (error) {
       console.error("Error storing user data:", error);
     }

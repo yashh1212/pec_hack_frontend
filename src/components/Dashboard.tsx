@@ -7,7 +7,10 @@ const Dashboard = () => {
   const { ref, isVisible } = useIntersectionObserver();
 
   return (
-    <div className="bg-transperent min-h-screen p-6 text-gray-200">
+    <div
+      id="Dashboard"
+      className="bg-transperent min-h-screen p-6 text-gray-200"
+    >
       <div
         ref={ref}
         className={`max-w-7xl mx-auto transform transition-all duration-1000 ${

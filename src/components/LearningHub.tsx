@@ -6,7 +6,7 @@ const LearningHub = () => {
   const navigate = useNavigate(); // Initialize navigate function
 
   return (
-    <div className="bg-transperent min-h-screen p-6">
+    <div id="learn" className="bg-transperent min-h-screen p-6">
       <div className="max-w-7xl mx-auto">
         <h1 className="text-3xl font-bold text-white mb-8">Learning Hub</h1>
 
@@ -21,7 +21,8 @@ const LearningHub = () => {
             },
             {
               title: "Environmental Science",
-              description: "Understand key environmental challenges and solutions",
+              description:
+                "Understand key environmental challenges and solutions",
               duration: "3 hours",
               level: "Intermediate",
             },

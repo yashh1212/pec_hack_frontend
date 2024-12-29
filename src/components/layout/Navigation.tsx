@@ -10,15 +10,17 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-green-600">
+            <a href="/" className="text-2xl font-bold text-green-600">
               EnviroEarn
-            </span>
+            </a>
           </div>
           <div className="hidden md:flex items-center gap-6">
-            <NavLink href="#dashboard">Dashboard</NavLink>
-            <NavLink href="#learn">Learn</NavLink>
-            <NavLink href="#community">Community</NavLink>
-            {isAuthenticated && <ConnectButton />} <LoginButton />
+            <NavLink href="/#dashboard">Dashboard</NavLink>
+            <NavLink href="/#learn">Learn</NavLink>
+            <NavLink href="/UpcomingEvents">Upcoming Events</NavLink>
+            <NavLink href="/ReportSection">Report</NavLink>
+            {isAuthenticated && <ConnectButton />}
+            <LoginButton />
           </div>
         </div>
       </div>
@@ -30,10 +32,7 @@ const NavLink: React.FC<{ href: string; children: React.ReactNode }> = ({
   href,
   children,
 }) => (
-  <a
-    href={href}
-    className="text-gray-600 hover:text-green-600 transition-colors"
-  >
+  <a href={href} className="text-white hover:text-green-600 transition-colors">
     {children}
   </a>
 );

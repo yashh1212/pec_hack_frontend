@@ -50,18 +50,17 @@ const CourseComponent = () => {
 
     const course_handleSubmit = async (e) => {
       e.preventDefault();
-
-      // Data to be sent in the API request
       const user_id = sessionStorage.getItem("user_id");
+      alert(user_id);
       const data = {
-        user_id: user_id,
+        id: user_id,
         course: "Environmental Science",
       };
 
       try {
         // Replace this URL with your actual API endpoint
         const response = await fetch("http://localhost:5000/api/submit", {
-          method: "POST", // Method for API call
+          method: "POST",
           headers: {
             "Content-Type": "application/json", // Ensure we send JSON data
           },
@@ -220,7 +219,7 @@ const CourseComponent = () => {
 
       {/* Submit Button */}
       <button
-        onSubmit={course_handleSubmit}
+        onClick={course_handleSubmit}
         disabled={!allPhasesCompleted}
         className={`bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors ${
           !allPhasesCompleted ? "cursor-not-allowed opacity-50" : ""
@@ -228,6 +227,7 @@ const CourseComponent = () => {
       >
         Submit
       </button>
+
       <ToastContainer />
     </div>
   );

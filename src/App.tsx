@@ -8,6 +8,9 @@ import Community from './components/Community';
 import Navigation from "./components/layout/Navigation";
 import CourseComponent from "./components/course/Enviro";
 import background from "../images/a5afc9_47eb0f65530641ac9d02588eea0c8e69mv2.jpg"; 
+import EventPage from './components/layout/Event';
+import UpcomingEvents from './components/layout/Upcomingevents';
+import ReportSection from './components/layout/ReportSection';
 
 function App() {
   return (
@@ -30,10 +33,13 @@ function App() {
                   <Dashboard />
                   <LearningHub />
                   <Community />
+                  <EventPage />
                 </>
               }
             />
             <Route path="/course" element={<CourseComponent />} />
+            <Route path="/UpcomingEvents" element={<UpcomingEvents />} />
+            <Route path="/ReportSection" element={<ReportSection />} />
           </Routes>
         </main>
         <Footer />

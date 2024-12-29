@@ -8,6 +8,20 @@ module.exports = {
       colors: {
         "geeks-green": "#0f9d58", // Custom GeeksforGeeks green
       },
+      keyframes: {
+        scrollLeft: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+        scrollRight: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(100%)" },
+        },
+      },
+      animation: {
+        scrollLeft: "scrollLeft 20s linear infinite",
+        scrollRight: "scrollRight 20s linear infinite",
+      },
     },
   },
   plugins: [

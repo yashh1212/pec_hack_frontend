@@ -75,8 +75,8 @@ const Hero = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             {[
-              { number: 10000, label: "Active Members", suffix: "+" },
-              { number: 50000, label: "Trees Planted", suffix: "+" },
+              { number: 100, label: "Active Members", suffix: "+" },
+              { number: 500, label: "Trees Planted", suffix: "+" },
               { number: 100, label: "Course Modules", suffix: "+" },
             ].map((stat) => (
               <div
